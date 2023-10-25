@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Contato</title>
+</head>
+<body>
+    <h1>Formulário de Contato</h1>
+    <form method="post" action="{% url 'salvar_contato' %}">
+        {% csrf_token %}
+        Nome: <input type="text" name="nome"><br>
+        Email: <input type="email" name="email"><br>
+        Mensagem: <textarea name="mensagem"></textarea><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedor de Software - Jefferson</title>
+    <!-- Link para a folha de estilos do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link para a biblioteca Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Link para o Animate.css para animações -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Cor de fundo do corpo */
+        }
+
+        /* Estilos para cabeçalho */
+        .header {
+            background-image: url('https://images.pexels.com/photos/3202236/pexels-photo-3202236.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+        }
+
+        .header p {
+            font-size: 20px;
+        }
+
+        /* Estilos para seções */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            color: #333; /* Cor do título da seção */
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        /* Estilos para ícones */
+        .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #c51631; /* Cor dos ícones */
+        }
+
+        /* Estilos para botões */
+        .btn-primary {
+            background-color: #c51631; /* Cor do botão primário */
+            border-color: #c51631;
+            padding: 15px 30px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 30px; /* Borda arredondada */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #a21428; /* Cor de destaque do botão primário */
+            border-color: #a21428;
+            transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+        }
+
+        /* Estilos para links */
+        a {
+            color: #c51631; /* Cor dos links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #a21428; /* Cor de destaque dos links */
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Estilos para cards */
+        .card {
+            border: none;
+            border-radius: 10px; /* Borda arredondada */
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Estilo para a seção de contato */
+        #contato {
+            background-color: #c51631;
+            padding: 60px 0;
+            color: #fff;
+        }
+
+        /* Estilos para o formulário de contato */
+        .contact-form {
+            text-align: center;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+            color: #fff;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #a21428;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #c51631;
+        }
+
+        /* Animação para a seção de serviços */
+        .service-card {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            opacity: 0;
+        }
+
+        /* Animação para o botão de rolagem */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scroll-down a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .scroll-down a:hover {
+            color: #c51631;
+        }
+        .alert.alert-success {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 400px;
+            padding: 15px;
+            background-color: #333333; /* Cor de fundo preto */
+           
+            color: #fff; /* Texto branco */
+            text-align: center;
+            
+            z-index: 9999; /* Certifique-se de que a mensagem esteja sempre na parte superior */
+            font-size: 19px; /* Tamanho de fonte maior */
+        }
+        
+        
+        
+       
+        
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <h1 class="display-4">Fabrica de Software</h1>
+            <p class="lead">Seu parceiro confiável para soluções de software personalizadas.</p>
+            <a href="#sobre" class="btn btn-primary">Sobre Mim</a>
+        </div>
+        
+        {% if mensagem_enviada %}
+        <div class="alert alert-success" id="mensagem-enviada">Mensagem enviada com sucesso, Em breve retornaremos!</div>
+    {% endif %}
+        
+        <div class="scroll-down">
+            
+            <a href="#sobre"><i class="fas fa-angle-down"></i></a>
+        </div>
+        
+    </header>
+
+    <!-- Seção Sobre -->
+<section id="sobre">
+    <div class="container">
+        <h2 class="section-title animate__animated animate__bounceInLeft">Sobre Nós</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Somos uma startup de desenvolvimento de software apaixonada por criar soluções inovadoras.</p>
+                <p>Nossa jornada começou há anos, quando descobrimos nosso amor pela programação e pela busca de soluções criativas para desafios tecnológicos.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.pexels.com/photos/7731358/pexels-photo-7731358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Nossa Equipe" class="img-fluid">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="row">
+                <div class="col-md-4 service-card animate__animated animate__fadeInUp">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-cogs icon"></i>
+                            <h3 class="card-title"> Desenvolvimento web</h3>
+                            <p class="card-text">No cenário de negócios atual, a presença online é mais crucial do que nunca. E para se destacar em meio à concorrência, você precisa de um parceiro confiável em desenvolvimento web.
+
+                                .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 service-card animate__animated animate__fadeInUp">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-mobile-alt icon"></i>
+                            <h3 class="card-title">Desenvolvimento Mobile</h3>
+                            <p class="card-text">NNós entendemos que seu público está em constante movimento, e é por isso que oferecemos soluções de desenvolvimento de aplicativos móveis que se destacam. Seja para iOS, Android ou ambas as plataformas, criamos aplicativos móveis feitos sob medida para suas necessidades exclusivas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 service-card animate__animated animate__fadeInUp">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-globe icon"></i>
+                            <h3 class="card-title">Automações</h3>
+                            <p class="card-text">As automatizações são a chave para simplificar e otimizar os processos diários em seu negócio. Quer se trate de manter seu banco de dados sempre atualizado, disparar e-mails estratégicos nos momentos cruciais ou gerar relatórios detalhados sob demanda, nós temos a solução.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- Seção de Contato -->
+    <section id="contato" style="background-color: #c51631;">
+        <div class="container text-center">
+            <h2 class="section-title">Contato</h2>
+            <p class="lead">Entre em contato conosco preenchendo o formulário abaixo:</p>
+            <div class="contact-form">
+                <form method="post" action="{% url 'salvar_contato' %}" id="meu-formulario">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="nome" placeholder="Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Enviar Mensagem">
+                    </div>
+                </form>
+    
+                <!-- Adicione a mensagem de sucesso após o formulário -->
+              
+            </div>
+        </div>
+    </section>
+    
+
+       
+      
+    
+    <script>
+        // Função para mostrar a mensagem de sucesso e, em seguida, ocultá-la após 3 segundos
+        function mostrarMensagem() {
+            var mensagem = document.getElementById("mensagem-enviada");
+            mensagem.style.display = "block";
+    
+            // Ocultar a mensagem após 3 segundos (3000 milissegundos)
+            setTimeout(function () {
+                mensagem.style.display = "none";
+            }, 9000);
+        }
+    
+        // Chame a função quando a página for carregada
+        window.onload = mostrarMensagem;
+    </script>
+    
+
+
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2023 Seu Nome - Todos os direitos reservados</p>
+            <!-- Adicione links para suas redes sociais aqui -->
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript do Bootstrap e personalizados -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Biblioteca Font Awesome para ícones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+</body>
+</html>
